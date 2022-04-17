@@ -23,9 +23,9 @@ for Enemigo in nivel1 :
     recompensa(jugador)
     jugador.comprobarNivel()
 
-print("Has conseguido Avanzar de sala ")
+print("Has conseguido Avanzar de sala enorabuena")
 
- #prueba de git
+ #chale la tamos cagando we
 
 
 
