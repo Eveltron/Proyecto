@@ -1,9 +1,13 @@
+from msilib.schema import Class
+
+
 class Enemigo:
-    def __init__(self,nombre,vida,ataque):
+    def __init__(self,nombre,vida,ataque,nivel):
         self.nombre = nombre
-        self.vida = vida
-        self.ataque = ataque
+        self.vida = vida + 5*nivel
+        self.ataque = ataque + 2*nivel
         self.vivo = True
+        self.nivel = nivel
 
     #Metodo Para perder vida
     def quitarVida(self,cantidad):
@@ -12,6 +16,21 @@ class Enemigo:
         if self.vida <= 0:
             self.vivo = False
         
+class OrcoGuerrero(Enemigo):
+    def __init__(self,nivel):
+        super().__init__("Orco Guerror",35,6,nivel)
+
+class OrcoArquero(Enemigo):
+    def __init__(self,nivel):
+      super().__init__("Orco Arquero",40,8,nivel)
+
+class OrcoGladeador(Enemigo):
+    def __init__(self,nivel):
+        super().__init__("Orco Gladeador",60,8,nivel)
+        
+        
+
+
 class Personaje:
     def __init__(self,nombre,ataque,vida,energia,curacion,costeCuracion):        
         self.nombre = nombre
